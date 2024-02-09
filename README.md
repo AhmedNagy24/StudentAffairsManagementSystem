@@ -1,0 +1,1 @@
+Student Affairs Management System is a streamlined software solution designed for educational institutions to manage student affairs efficiently. It offers features for student profile management, enrollment, and customization. Ideal for schools, colleges, and universities seeking to enhance administrative processes and support student success.
