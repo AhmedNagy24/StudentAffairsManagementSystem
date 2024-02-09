@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT AFFAIRS</title>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+
+<body>
+<header>
+<div class="navigation-bar">
+    <ul class="navigation-menu">
+        <li><a href="{% url 'main' %}">Main Page</a> </li>
+        <li><a href="{% url 'add' %}">Register</a></li>
+        <li><a href="{% url 'view' %}">View Students</a></li>
+        <li><a href="{% url 'depart' %}">Register department</a></li>
+        <li><a href="{% url 'search' %}" class="active">Find Student</a></li>
+        <li><a href="{% url 'edit' %}">Edit or delete student</a></li>
+    </ul>
+    <ul class = "navigation-menu">
+        <div style=" display: inline-block;
+            margin-left:-50px;
+            ">
+            <li><a href="{% url 'login' %}">sign out</a></li>
+            <li> <img src="{% static 'image/istockphoto-1209654046-612x612.jpg' %}" alt="avatar" width="30" height="30"></li>
+        </div>
+    </ul>
+</div>
+</header>
+<center>
+    <img src="{% static 'image/generic_logo.png' %}" height="150" width="500"/></header>
+</center>
+<div id="message" hidden style="color: #f2f2f2"></div>
+<h1 class="page-name">Search for students</h1>
+<div>
+    <label for="search_bar_assign" id="Custom_line_label2">Filter by first name:</label>
+        <input id="search" type="search" placeholder="first name...">
+        <button id="search_button" type="button" >Search</button>
+
+</div>
+{% csrf_token %}
+<div class="Table">
+        <table id="data">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th id="id">ID</th>
+                <th>level</th>
+                <th>email</th>
+                <th>GPA</th>
+                <th>Status</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Phone</th>
+
+            </tr>
+            </thead>
+            <tbody id="student_data">
+
+            </tbody>
+        </table>
+    </div>
+<script src="{% static 'js/searchstudent.js' %}"></script>
+</body>
+</html>
